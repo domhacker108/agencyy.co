@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TRAM MANAGEMENT</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="#" class="sidebar-link active" data-section="dashboard">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="projects">
+                <i class="fas fa-project-diagram"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="messages">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </a>
+            <a href="#" class="sidebar-link" data-section="settings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#" class="sidebar-link" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Dashboard Section -->
+            <section id="dashboardSection" class="dashboard-section">
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h2>Hello, Admin!</h2>
+                        <p>Welcome back to your dashboard</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Statistics Card -->
+                    <div class="dashboard-card">
+                        <h3>Project Statistics</h3>
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 70%"></div>
+                            <div class="bar" style="height: 50%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Card -->
+                    <div class="dashboard-card">
+                        <h3>Overall Progress</h3>
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart">
+                                <path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path class="circle" stroke-dasharray="28, 100" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <div class="percentage">28%</div>
+                        </div>
+                        <p class="text-center">Completed</p>
+                    </div>
+
+                    <!-- Projects Card -->
+                    <div class="dashboard-card">
+                        <h3>Active Projects</h3>
+                        <ul class="project-list">
+                            <li class="project-item">
+                                <span>E-commerce Website</span>
+                                <div class="project-status">
+                                    <div class="status-indicator in-progress"></div>
+                                    <span>In Progress</span>
+                                </div>
+                            </li>
+                            <li class="project-item">
+                                <span>Mobile Banking App</span>
+                                <div class="project-status">
+                                    <div class="status-indicator review"></div>
+                                    <span>Review</span>
+                                </div>
+                            </li>
+                            <li class="project-item">
+                                <span>Portfolio Website</span>
+                                <div class="project-status">
+                                    <div class="status-indicator planning"></div>
+                                    <span>Planning</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Tasks Card -->
+                    <div class="dashboard-card">
+                        <h3>Project Progress</h3>
+                        <div class="task-list">
+                            <div class="task-item">
+                                <div class="task-info">
+                                    <p>E-commerce Website</p>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-info">
+                                    <p>Mobile Banking App</p>
+                                    <span>45%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            <div class="task-item">
+                                <div class="task-info">
+                                    <p>Portfolio Website</p>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projectsSection" class="dashboard-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Manage Projects</h2>
+                    <button id="addProjectBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add New Project
+                    </button>
+                </div>
+
+                <!-- Projects Table -->
+                <div class="dashboard-card">
+                    <div class="table-responsive">
+                        <table id="projectsTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Technologies</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Projects will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section id="messagesSection" class="dashboard-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Messages</h2>
+                </div>
+                <div class="dashboard-card">
+                    <div class="table-responsive">
+                        <table id="messagesTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Messages will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settingsSection" class="dashboard-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Settings</h2>
+                </div>
+                <div class="dashboard-card">
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label for="siteTitle">Site Title</label>
+                            <input type="text" id="siteTitle" name="siteTitle" class="form-control" value="TRAM MANAGEMENT">
+                        </div>
+                        <div class="form-group">
+                            <label for="adminEmail">Admin Email</label>
+                            <input type="email" id="adminEmail" name="adminEmail" class="form-control" value="admin@trammanagement.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" value="(123) 456-7890">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html> 
